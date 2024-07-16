@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Services - Mzee Corporations</title>
+  <title>Show Image - Mzee Corporations</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -105,76 +105,32 @@
 
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>Mzee Corporations</li>
+          <li>Inner Page</li>
         </ol>
-        <h2>Our Services</h2>
+        <h2>Inner Page</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
 
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
-      <div class="container">
+      <h2 class="text-center">Uploaded Images</h2>
 
-        <div class="section-title">
-          <span>Services</span>
-          <h2>Services</h2>
-          <p>Exceptional services tailored to exceed your unique needs and expectations.</p>
-        </div>
+       <div class="container">
+          <div style="display: flex;
+          justify-content:space-between;
+          flex-wrap: wrap">
+               {% for image in images %}
+              <div class="col mb-2">
+                  <img src="{{ image.image.url }}" alt="Uploaded Image" style="width: 300px;height:300px"> <br>
+                  <p><strong>Title :</strong>{{ image.title }}</p>
+                  <p><strong>Price :</strong>{{ image.price }}</p>
 
-        <div class="row">
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4><a href="">Digital Marketing</a></h4>
-              <p>Maximize online presence, engage audiences, and drive business growth.</p>
-            </div>
+                  <a href="/imagedelete/{{ image.id }}" class="btn btn-outline-danger">DELETE</a>
+                  <a href="{% url 'pay' %}" class="btn btn-outline-success">PAY</a><br>
+              </div>
+           {% endfor %}
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="150">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-file"></i></div>
-              <h4><a href="">Web Design and Development</a></h4>
-              <p>Crafting visually stunning websites with seamless functionality and user experience.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4><a href="">Consulting Services</a></h4>
-              <p>Expert guidance to optimize strategies and achieve business objectives efficiently.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="fade-up" data-aos-delay="450">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-world"></i></div>
-              <h4><a href="">Content Creation</a></h4>
-              <p>Compelling content that resonates, captivates, and enhances brand storytelling.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="fade-up" data-aos-delay="600">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-slideshow"></i></div>
-              <h4><a href="">Social Media Management</a></h4>
-              <p>Strategic management to elevate brand visibility and engagement on social platforms.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="fade-up" data-aos-delay="750">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-arch"></i></div>
-              <h4><a href="">SEO Optimization</a></h4>
-              <p>Boosting search rankings, increasing visibility, and driving organic traffic.</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Services Section -->
+       </div>
 
   </main><!-- End #main -->
 
@@ -189,9 +145,9 @@
               <h3>Mzee</h3>
               <p>
                 Murang'a Road <br>
-                NY 535022, USA<br><br>
-                <strong>Phone:</strong> +254 758293769<br>
-                <strong>Email:</strong> mzeecorporations.com<br>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8367439865724!2d36.82694557415252!3d-1.2709603987169322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f16d9ebab66fb%3A0x6bcba8cd742053bb!2sMurang&#39;a%20Rd%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1701232634343!5m2!1sen!2ske" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><br><br>
+                <strong>Phone:</strong> +254 758293768<br>
+                <strong>Email:</strong> mzeecorporations@gmail.com<br>
               </p>
               <div class="social-links mt-3">
                 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -217,11 +173,11 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'services' %}">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'services' %}">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'services' %}">Web Cleaning</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'services' %}">Analytics</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'services' %}">Graphic Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Promotion</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
             </ul>
           </div>
 
